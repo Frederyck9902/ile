@@ -12,4 +12,29 @@ class LeyController extends Controller
 		$ley = Ley::all();
         return view('index',array('ley'=>$ley));
     }
+
+    public function getEdit(){
+        return view('partials.edit');
+    }
+
+    public function getAñadir(){
+        return view('partials.añadir');
+    }
+
+    public function getEliminar(){
+        return view('partials.eliminar');
+    }
+
+    public function getBuscar(){
+        return view('partials.buscar');
+    }
+    
+    public function getReporte(){
+        return view('partials.reporte');
+    }
+
+    public function getNosotros(){
+        return view('partials.nosotros');
+    }
 }
+
