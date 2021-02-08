@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/", 'App\\Http\\Controllers\\LeyController@getIndex');
 
+Route::get("/edit", 'App\\Http\\Controllers\\LeyController@getEdit');
+
+Route::get("/añadir", 'App\\Http\\Controllers\\LeyController@getAñadir');
+
+Route::get("/eliminar", 'App\\Http\\Controllers\\LeyController@getEliminar');
+
+Route::get("/buscar", 'App\\Http\\Controllers\\LeyController@getBuscar');
+
+Route::get("/reporte", 'App\\Http\\Controllers\\LeyController@getReporte');
+
+Route::get("/nosotros", 'App\\Http\\Controllers\\LeyController@getNosotros');
+
 //Route::middleware(['auth:sanctum', 'verified'])->get('/', 'App\\Http\\Controllers\\LeyController@getIndex');
