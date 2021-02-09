@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Ley;
+use App\Models\Titulo;
+use App\Models\Capitulo;
 
 class LeyController extends Controller
 {
     //
     public function getIndex(){
-		$ley = Ley::all();
-        return view('index',array('ley'=>$ley));
+		$titulo= Titulo::all();
+        $capitulo=Capitulo::all();
+        return view('index',array('titulo'=>$titulo,'capitulo'=>$capitulo));
     }
 
     public function getEdit(){
