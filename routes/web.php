@@ -27,4 +27,8 @@ Route::get("/reporte", 'App\\Http\\Controllers\\LeyController@getReporte');
 
 Route::get("/nosotros", 'App\\Http\\Controllers\\LeyController@getNosotros');
 
+//Route::post("/añadir", 'App\\Http\\Controllers\\LeyController@postTitulo');
+//Route::post("/añadir", 'App\\Http\\Controllers\\LeyController@postArticulo');
+//Route::post("/añadir", 'App\\Http\\Controllers\\LeyController@postCapitulo');
+Route::post("/eliminar", 'App\\Http\\Controllers\\LeyController@postEliminar');
 //Route::middleware(['auth:sanctum', 'verified'])->get('/', 'App\\Http\\Controllers\\LeyController@getIndex');

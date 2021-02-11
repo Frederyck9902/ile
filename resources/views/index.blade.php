@@ -5,9 +5,15 @@
 
 ?> 
 <div class="content text-center">              
-        @foreach( $elementos as list($titulo,$capitulo)) 
+        @foreach( $titulo as $tit)
+        @foreach( $capitulo as $cap) 
+        <div>    
+        <h4>{{$tit->nombre}}</h4>                                    
+          <h4>{{$cap->nombre}}</h4>
+        </div>                        
+        @endforeach
         <div>                                        
-          <h4>{{$titulo->nombre}}</h4>
+          
         </div>                        
         @endforeach
 </div>
