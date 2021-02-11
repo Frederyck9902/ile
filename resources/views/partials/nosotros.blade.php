@@ -4,7 +4,7 @@
 <h2>Software SAS</h2>
 <div class="card-group">
   <div class="card">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="/equipo/fotopersonal.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Fredery Duvan Buesaquillo</h5>
       <p class="card-text"><small class="text-muted">Desarrollador</small></p>
