@@ -12,9 +12,9 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">               
                     <div class="navbar-nav">                    
                         <a class="nav-link active" href="/">Inicio</a>
-                        <a class="nav-link" href="edit">Editar</a>
-                        <a class="nav-link" href="reporte">Reporte</a>    
-                        <a class="nav-link" href="nosotros">Nosotros</a>                           
+                        <a class="nav-link" href="{{url('/edit')}}">Editar</a>
+                        <a class="nav-link" href="{{url('/reporte')}}">Reporte</a>    
+                        <a class="nav-link" href="{{url('/nosotros')}}">Nosotros</a>                           
                         @if( Auth::check() )                 
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}

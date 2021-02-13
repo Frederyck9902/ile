@@ -21,6 +21,40 @@ class LeyController extends Controller
         return view('partials.edit');
     }
 
+    public function getEditTit($id){
+        return view('partials.editTit',array('Contenido'=>Titulo::findOrFail($id)));
+    }
+
+    public function putEditTit(Request $request, $id){
+        $titulo = Titulo::findOrFail($id);
+        $titulo->nombre = $request->nombre;
+        $titulo->save();
+        return redirect('index');
+    }
+
+    public function getEditCap($id){
+        return view('partials.editCap',array('Contenido'=>Capitulo::findOrFail($id)));
+    }
+
+    public function putEditCap(Request $request, $id){
+        $capitulo = Capitulo::findOrFail($id);
+        $capitulo->nombre = $request->nombre;
+        $capitulo->save();
+        return redirect('index');
+    }
+
+    public function getEditArt($id){
+        return view('partials.editArt',array('Contenido'=>Articulo::findOrFail($id)));
+    }
+
+    public function putEditArt(Request $request, $id){
+        $articulo = Articulo::findOrFail($id);
+        $articulo->nombre = $request->nombre;
+        $articulo->contendio = $request->contenido;
+        $articulo->save();
+        return redirect('index');
+    }
+
     public function getAñadir(){
         $titulo= Titulo::all();
         $capitulo= Capitulo::all();
@@ -35,9 +69,22 @@ class LeyController extends Controller
     }
 
     public function getBuscar(){
-        return view('partials.buscar');
+        $titulo = Titulo::all();
+        $capitulo = Capitulo::all();
+        $articulo = Articulo::all();
+        return view('partials.buscar',array('titulo'=>$titulo,'capitulo'=>$capitulo,'articulo'=>$articulo));
     }
     
+    public function getBuscarTit($id){
+        return view('partials.buscarTit',array('Titulo'=>Titulo::findOrFail($id)));
+    }
+    public function getBuscarCap($id){
+        return view('partials.buscarCap',array('Capitulo'=>Capitulo::findOrFail($id)));
+    }
+    public function getBuscarArt($id){
+        return view('partials.buscarArt',array('Articulo'=>Articulo::findOrFail($id)));
+    }
+
     public function getReporte(){
         $titulos = DB::table('titulos')->count();
         $capitulos = DB::table('capitulos')->count();
@@ -47,6 +94,10 @@ class LeyController extends Controller
 
     public function getNosotros(){
         return view('partials.nosotros');
+    }
+
+    public function postBuscar(Request $request){
+        return view('partials.buscar');
     }
 
     public function postTitulo(Request $request){
