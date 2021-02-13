@@ -59,7 +59,7 @@
             Añadir Título
          </div>
          <div class="card-body" style="padding:30px">
-         <form method="POST">
+         <form method="POST" action="{{ action('App\\Http\\Controllers\\LeyController@postTitulo') }}">
                {{ csrf_field() }}
 
                <div class="form-group">
@@ -85,7 +85,7 @@
             Añadir Capítulo
          </div>
          <div class="card-body" style="padding:30px">
-         <form method="POST">
+         <form method="POST" action="{{ action('App\\Http\\Controllers\\LeyController@postCapitulo') }}">
                {{ csrf_field() }}
                <select name="titulo" id="titulo" class="form-select" aria-label="Default select example">
                   <option selected disable >Seleccione Título</option>
@@ -117,7 +117,7 @@
             Añadir Artículo
          </div>
          <div class="card-body" style="padding:30px">
-         <form method="POST">
+         <form method="POST" action="{{ action('App\\Http\\Controllers\\LeyController@postArticulo') }}">
                {{ csrf_field() }}
 
                <select name="capitulo" id="capitulo" class="form-select" aria-label="Default select example">

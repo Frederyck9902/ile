@@ -42,9 +42,9 @@ Route::get("/reporte", 'App\\Http\\Controllers\\LeyController@getReporte');
 
 Route::get("/nosotros", 'App\\Http\\Controllers\\LeyController@getNosotros');
 
-//Route::post("/añadir", 'App\\Http\\Controllers\\LeyController@postTitulo');
-//Route::post("/añadir", 'App\\Http\\Controllers\\LeyController@postArticulo');
-//Route::post("/añadir", 'App\\Http\\Controllers\\LeyController@postCapitulo');
+Route::post("/añadir/titulo", 'App\\Http\\Controllers\\LeyController@postTitulo');
+Route::post("/añadir/articulo", 'App\\Http\\Controllers\\LeyController@postArticulo');
+Route::post("/añadir/capitulo", 'App\\Http\\Controllers\\LeyController@postCapitulo');
 //Route::get("/edit/{$selec}/{$id}", [LeyController::class,'postEdit']);
 Route::put("/edit/1/{id}", [LeyController::class,'putEditTit']);
 Route::put("/edit/2/{id}", [LeyController::class,'putEditCap']);
