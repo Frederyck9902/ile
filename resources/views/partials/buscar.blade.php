@@ -47,12 +47,12 @@
           Buscar Título
         </div>
         <div class="card-body" style="padding:30px">
-          <form method="GET">
+          <form action="/buscar/1" method="GET">
           {{ csrf_field() }}
           <select name="titulo" class="form-select" aria-label="Default select example">
                 <option selected disable >Seleccione Título</option>
               @foreach($titulo as $tit)
-                <option  value="{{$tit->nombre}}" id="{{$tit->id}}">{{$tit->nombre}}</option>
+                <option  value="{{$tit->id}}" id="{{$tit->id}}">{{$tit->nombre}}</option>
               @endforeach
             </select>
           <button type="submit" class="btn btn-outline-secondary">Buscar</button>
@@ -69,12 +69,12 @@
           Buscar capitulo
         </div>
           <div class="card-body" style="padding:30px">
-            <form method="GET">
+            <form action="/buscar/2" method="GET">
             {{ csrf_field() }}
               <select name="capitulo" class="form-select" aria-label="Default select example">
                 <option selected disable >Seleccione Capítulo</option>
                 @foreach($capitulo as $cap)
-                  <option  value="{{$cap->nombre}}" id="{{$cap->id}}">{{$cap->nombre}}</option>
+                  <option  value="{{$cap->id}}" id="{{$cap->id}}">{{$cap->nombre}}</option>
                 @endforeach
               </select>
             <button type="submit" class="btn btn-outline-secondary">Buscar</button>
@@ -91,7 +91,7 @@
           Buscar articulo
         </div>
           <div class="card-body" style="padding:30px">
-            <form action="/buscar/3/" method="GET">
+            <form action="/buscar/3" method="GET">
               {{ csrf_field() }}
               <select name="articulo"  class="form-select" aria-label="Default select example" >
                 <option selected disable >Seleccione Artículo</option>
@@ -113,6 +113,6 @@
 
 
 <a href="#"  class="btn btn-outline-secondary" >Añadir Comentario</a>
-<a href="/editar"  class="btn btn-outline-secondary" >Editar</a>
+
 <a href="/"  class="btn btn-outline-secondary" >Volver al inicio</a>
 @stop

@@ -32,6 +32,12 @@ Route::get("/eliminar", 'App\\Http\\Controllers\\LeyController@getEliminar');
 
 Route::get("/buscar", 'App\\Http\\Controllers\\LeyController@getBuscar');
 
+Route::get("/buscar/1", [LeyController::class,'getBuscarTitUrl']);
+
+Route::get("/buscar/2", [LeyController::class,'getBuscarCapUrl']);
+
+Route::get("/buscar/3", [LeyController::class,'getBuscarArtUrl']);
+
 Route::get("/buscar/1/{id}", [LeyController::class,'getBuscarTit']);
 
 Route::get("/buscar/2/{id}", [LeyController::class,'getBuscarCap']);

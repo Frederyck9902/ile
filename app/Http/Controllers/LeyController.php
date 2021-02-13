@@ -75,6 +75,20 @@ class LeyController extends Controller
         return view('partials.buscar',array('titulo'=>$titulo,'capitulo'=>$capitulo,'articulo'=>$articulo));
     }
     
+    public function getBuscarTitUrl(Request $request){
+        $id = $request->titulo;
+        return redirect('/buscar/1/'.$id);
+    }
+
+    public function getBuscarCapUrl(Request $request){
+        $id = $request->capitulo;
+        return redirect('/buscar/2/'.$id);
+    }
+    public function getBuscarArtUrl(Request $request){
+        $id = $request->articulo;
+        return redirect('/buscar/3/'.$id);
+    }
+
     public function getBuscarTit($id){
         return view('partials.buscarTit',array('Titulo'=>Titulo::findOrFail($id)));
     }
