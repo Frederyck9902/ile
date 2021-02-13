@@ -30,7 +30,7 @@ class LeyController extends Controller
         $titulo = Titulo::findOrFail($id);
         $titulo->nombre = $request->nombre;
         $titulo->save();
-        return redirect('index');
+        return redirect('/');
     }
 
     public function getEditCap($id){
@@ -41,7 +41,7 @@ class LeyController extends Controller
         $capitulo = Capitulo::findOrFail($id);
         $capitulo->nombre = $request->nombre;
         $capitulo->save();
-        return redirect('index');
+        return redirect('/');
     }
 
     public function getEditArt($id){
@@ -51,9 +51,9 @@ class LeyController extends Controller
     public function putEditArt(Request $request, $id){
         $articulo = Articulo::findOrFail($id);
         $articulo->nombre = $request->nombre;
-        $articulo->contendio = $request->contenido;
+        $articulo->contenido = $request->contenido;
         $articulo->save();
-        return redirect('index');
+        return redirect('/');
     }
 
     public function getAñadir(){

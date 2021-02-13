@@ -52,9 +52,9 @@ Route::post("/añadir/titulo", 'App\\Http\\Controllers\\LeyController@postTitulo
 Route::post("/añadir/articulo", 'App\\Http\\Controllers\\LeyController@postArticulo');
 Route::post("/añadir/capitulo", 'App\\Http\\Controllers\\LeyController@postCapitulo');
 //Route::get("/edit/{$selec}/{$id}", [LeyController::class,'postEdit']);
-Route::put("/edit/1/{id}", [LeyController::class,'putEditTit']);
-Route::put("/edit/2/{id}", [LeyController::class,'putEditCap']);
-Route::put("/edit/3/{id}", [LeyController::class,'putEditArt']);
+Route::put("/edit/1/{id}", 'App\\Http\\Controllers\\LeyController@putEditTit');
+Route::put("/edit/2/{id}", 'App\\Http\\Controllers\\LeyController@putEditCap');
+Route::put("/edit/3/{id}", 'App\\Http\\Controllers\\LeyController@putEditArt');
 
 //Route::post("/buscar", 'App\\Http\\Controllers\\LeyController@postBuscar');
 Route::post("/eliminar", 'App\\Http\\Controllers\\LeyController@postEliminar');
