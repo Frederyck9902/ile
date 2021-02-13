@@ -14,7 +14,8 @@ class LeyController extends Controller
     public function getIndex(){
 		$titulo= Titulo::all();
         $capitulo=Capitulo::all();
-        return view('index',array('titulo'=>$titulo,'capitulo'=>$capitulo));
+        $articulo=Articulo::all();
+        return view('index',array('titulo'=>$titulo,'capitulo'=>$capitulo,'articulo'=>$articulo));
     }
 
     public function getEdit(){

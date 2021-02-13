@@ -97,8 +97,7 @@
                 <option selected disable >Seleccione Artículo</option>
                   @foreach($articulo as $art) 
                     <option value="{{$art->id}}">{{$art->nombre}}</option> 
-                    <?php $key=$art->id ?>
-                    
+                    <?php $key=$art->id ?>                    
                   @endforeach
               </select>
               <button type="submit" class="btn btn-outline-secondary">Editar</button>
