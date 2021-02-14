@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url('/assets/bootstrap/css/bootstrap.min.css') }}" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-    <title>Buscar pelicula</title>
-</head>
-
-
-<body>
-    @extends('layouts.master')
-    @section('content')
-    <div class="container">
-        <h1>{{$Titulo->nombre}}</h1>
-        <a href="{{ url('edit/1/' .$Titulo->id)}}" $>Editar</a>
+@extends('layouts.master')
+@section('content')
+<div class="container">
+    <h1 style="text-align:center">{{$Titulo->nombre}}</h1>
+</div>
+<div class="row">
+    <div class="col-sm-12" style="text-align:center; margin-top:20px">
+      <a href="{{ url('edit/1/' .$Titulo->id)}}"  class="btn btn-outline-secondary" >Editar</a>
+      <a href="/buscar"  class="btn btn-outline-secondary" >Volver al buscador</a>
     </div>
+</div>
 
-    @stop
-<<body>
+@stop
