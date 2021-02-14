@@ -17,6 +17,22 @@
                 @if ($art->id_capitulo == $cap->id) 
                   <h5 style="text-align:center">{{$art->nombre}}</h5>
                   <p style="text-align:justify">{{$art->contenido}}</p>
+                  <div style="text-align:center ">
+                    <?php if ($art->img != null) {
+                        echo"
+                            <img  class='figure-img img-fluid rounded' width='150' height='150' alt='Hola'>
+                                <source src='http://localhost/ile{$art->img}'>
+                            </img>
+                        ";
+                
+                    };
+                    if ($art->vid != null) {
+                        echo"
+                            <video class='figure-img img-fluid rounded' src='http://localhost/ile{$art->vid}' width='150' height='150'controls></video>
+                        ";
+                    };
+                    ?>
+                    </div>
                 @endif 
               @endforeach 
           @endif                
