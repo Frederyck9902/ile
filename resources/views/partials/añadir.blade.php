@@ -125,7 +125,7 @@
             Añadir Artículo
          </div>
          <div class="card-body" style="padding:30px">
-            <form method="POST" action="{{ action('App\\Http\\Controllers\\LeyController@postArticulo') }}">
+            <form method="POST" action="{{ action('App\\Http\\Controllers\\LeyController@postArticulo') }}"  enctype="multipart/form-data">
                {{ csrf_field() }}
 
                <select name="capitulo" id="capitulo" class="form-select" aria-label="Default select example" style="width: 477px">
@@ -145,6 +145,18 @@
                   <textarea name="contenido" id="contenido" cols="65" rows="10"></textarea>
                </div>
                
+               <div class="form-group">
+                  <label for="title">Imagen</label>
+                  <input id="file-input" name="imagen" type="file" class="form-control" rows="3">
+                  </input>
+               </div>
+
+               <div class="form-group">
+                  <label for="title">Video</label>
+                  <input id="file-input" name="video" type="file" class="form-control" rows="3">
+                  </input>
+               </div>
+               
                <div class="form-group text-center">
                   <button id="añadir-articulo" type="submit" class="btn btn-outline-secondary" style="padding:8px 100px;margin-top:25px">
                      Añadir título
@@ -158,8 +170,6 @@
 
 <div class="row">
     <div class="col-sm-12" style="text-align:center; margin-top:20px">
-      <a href="#"  class="btn btn-outline-secondary" >Añadir Video</a>
-      <a href="#"  class="btn btn-outline-secondary" >Añadir Imagen</a>
       <a href="/"  class="btn btn-outline-secondary" >Volver al inicio</a>
     </div>
 </div>

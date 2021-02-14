@@ -25,6 +25,7 @@
         </input>
     </div>
     <button type="submit" class="btn btn-outline-secondary">Actualizar articulo</button>
+    <a class="btn btn-outline-secondary" href="/buscar">Cancelar</a>
 </form>
 </div>
 

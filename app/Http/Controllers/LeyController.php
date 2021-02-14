@@ -30,7 +30,7 @@ class LeyController extends Controller
         $titulo = Titulo::findOrFail($id);
         $titulo->nombre = $request->nombre;
         $titulo->save();
-        return redirect('/');
+        return redirect('/buscar/3/'.$titulo->id);
     }
 
     public function getEditCap($id){
@@ -41,7 +41,7 @@ class LeyController extends Controller
         $capitulo = Capitulo::findOrFail($id);
         $capitulo->nombre = $request->nombre;
         $capitulo->save();
-        return redirect('/');
+        return redirect('/buscar/2/'.$capitulo->id);
     }
 
     public function getEditArt($id){
@@ -49,23 +49,23 @@ class LeyController extends Controller
     }
 
     public function putEditArt(Request $request, $id){
+        $articulo = Articulo::findOrFail($id);
+        $articulo->nombre = $request->nombre;
+        $articulo->contenido = $request->contenido;
         if($request->hasfile('imagen')){
             $file = $request->file('imagen');
             $nameFile = time()."-".$file->getClientOriginalName();
             $ruta = "/public/img/".$nameFile;
             $file->move(public_path().'/img', $nameFile);
+            $articulo->img = $ruta;
         }
         if($request->hasfile('video')){
             $fileV = $request->file('video');
             $nameFileV = time()."-".$fileV->getClientOriginalName();
             $rutaV = "/public/video/".$nameFileV;
             $fileV->move(public_path().'/video', $nameFileV);
+            $articulo->vid = $rutaV;
         }
-        $articulo = Articulo::findOrFail($id);
-        $articulo->nombre = $request->nombre;
-        $articulo->contenido = $request->contenido;
-        $articulo->img = $ruta;
-        $articulo->vid = $rutaV;
         $articulo->save();
         return redirect('/buscar/3/'.$articulo->id);
     }
@@ -151,6 +151,20 @@ class LeyController extends Controller
         $titulo->id_capitulo=$id;
         $titulo->nombre=$request->articulo;
         $titulo->contenido=$request->contenido;
+        if($request->hasfile('imagen')){
+            $file = $request->file('imagen');
+            $nameFile = time()."-".$file->getClientOriginalName();
+            $ruta = "/public/img/".$nameFile;
+            $file->move(public_path().'/img', $nameFile);
+            $titulo->img= $ruta;
+        }
+        if($request->hasfile('video')){
+            $fileV = $request->file('video');
+            $nameFileV = time()."-".$fileV->getClientOriginalName();
+            $rutaV = "/public/video/".$nameFileV;
+            $fileV->move(public_path().'/video', $nameFileV);
+            $titulo->vid= $rutaV;
+        }
         $titulo->save();
         return redirect('reporte');
     }

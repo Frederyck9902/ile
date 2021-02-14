@@ -13,9 +13,9 @@
                     <div class="navbar-nav">                    
                         <a class="nav-link active" href="/">Inicio</a>
                         
-                        <a class="nav-link" href="{{url('/reporte')}}">Reporte</a>    
-                        <a class="nav-link" href="{{url('/nosotros')}}">Nosotros</a>                         
-                        <a class="nav-link" href="{{url('/buscar')}}">Buscar</a>                        
+                        <a class="nav-link" href="/reporte">Reporte</a>    
+                        <a class="nav-link" href="/nosotros">Nosotros</a>                         
+                        <a class="nav-link" href="/buscar">Buscar</a>                        
                         @if( Auth::check() )    
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
@@ -23,10 +23,11 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="añadir">Añadir</a></li>
+                                <li><a class="dropdown-item" href="buscar">Buscar</a></li>
                                 <li><a class="dropdown-item" href="eliminar">Eliminar</a></li>
                             </ul>
                         </div>
-                                 
+
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
