@@ -49,11 +49,25 @@ class LeyController extends Controller
     }
 
     public function putEditArt(Request $request, $id){
+        if($request->hasfile('imagen')){
+            $file = $request->file('imagen');
+            $nameFile = time()."-".$file->getClientOriginalName();
+            $ruta = "/public/img/".$nameFile;
+            $file->move(public_path().'/img', $nameFile);
+        }
+        if($request->hasfile('video')){
+            $fileV = $request->file('video');
+            $nameFileV = time()."-".$fileV->getClientOriginalName();
+            $rutaV = "/public/video/".$nameFileV;
+            $fileV->move(public_path().'/video', $nameFileV);
+        }
         $articulo = Articulo::findOrFail($id);
         $articulo->nombre = $request->nombre;
         $articulo->contenido = $request->contenido;
+        $articulo->img = $ruta;
+        $articulo->vid = $rutaV;
         $articulo->save();
-        return redirect('/');
+        return redirect('/buscar/3/'.$articulo->id);
     }
 
     public function getAñadir(){

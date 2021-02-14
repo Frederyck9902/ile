@@ -18,6 +18,8 @@ class CreateArticulosTable extends Migration
             $table->unsignedBigInteger('id_capitulo');
             $table->string("nombre");
             $table->text("contenido");
+            $table->string("img")->nullable();
+            $table->string("vid")->nullable();
             $table->timestamps();
             $table->foreign("id_capitulo")
                   ->references("id")
