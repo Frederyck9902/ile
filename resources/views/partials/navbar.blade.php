@@ -14,22 +14,34 @@
                         <a class="nav-link active" href="/">Inicio</a>
                         
                         <a class="nav-link" href="{{url('/reporte')}}">Reporte</a>    
-                        <a class="nav-link" href="{{url('/nosotros')}}">Nosotros</a>                           
+                        <a class="nav-link" href="{{url('/nosotros')}}">Nosotros</a>                         
+                        <a class="nav-link" href="{{url('/buscar')}}">Buscar</a>                        
                         @if( Auth::check() )    
-                        <a class="nav-link" href="{{url('/edit')}}">Editar</a>             
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                Editar
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="añadir">Añadir</a></li>
+                                <li><a class="dropdown-item" href="eliminar">Eliminar</a></li>
+                            </ul>
+                        </div>
+                                 
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
                                 Cerrar Sesión
                             </button>
                         </form>
+                
                         @elseif(!Auth::check())
                             <a class="nav-link" href="login">Iniciar Sesión</a> 
                         @endif
-                </div>
                     </div>
                 </div>
-                </div>
+            </div>
+        </div>
                  
     </div>
 </nav>
+

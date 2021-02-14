@@ -27,11 +27,26 @@
       });
   });
 </script>
-<h3>Ley 843 de 2003</h3>
-<h2>¿Que deseas eliminar?</h2>
-<button id="titulo" class="btn btn-outline-secondary">Título</button>
-<button id="capitulo" class="btn btn-outline-secondary">Capítulo</button>
-<button id="articulo" class="btn btn-outline-secondary">Artículo</button>
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12" style="text-align:center">
+         <h3>Ley 843 de 2003</h3>
+         <h2>¿Que deseas eliminar?</h2>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12" style="text-align:center">
+         <button id="titulo" class="btn btn-outline-secondary">Título</button>
+         <button id="capitulo" class="btn btn-outline-secondary">Capítulo</button>
+         <button id="articulo" class="btn btn-outline-secondary">Artículo</button>
+      </div>
+  </div>
+</div>
+
+
+
 
 <div  id="select-titulo" class="row" style="margin-top:40px; display:none">
    <div class="offset-md-3 col-md-6">
@@ -40,17 +55,19 @@
             Eliminar Título
          </div>
          <div class="card-body" style="padding:30px">
-<form method="POST">
-{{ csrf_field() }}
-<select name="titulo" class="form-select" aria-label="Default select example">
-  <option selected disable >Seleccione Título</option>
-  @foreach($titulo as $tit)
-  <option  value="{{$tit->nombre}}">{{$tit->nombre}}</option>
-  @endforeach
-</select>
-<button type="submit" class="btn btn-outline-secondary">Eliminar</button>
-</form>
-</div>
+            <form method="POST">
+            {{ csrf_field() }}
+            <select name="titulo" class="form-select" aria-label="Default select example" style="width: 477px">
+            <option selected disable >Seleccione Título</option>
+            @foreach($titulo as $tit)
+            <option  value="{{$tit->nombre}}">{{$tit->nombre}}</option>
+            @endforeach
+            </select>
+            <div class="form-group text-center">
+               <button type="submit" class="btn btn-outline-secondary" style="padding:8px 100px;margin-top:25px">Eliminar</button>
+            </div>
+            </form>
+         </div>
       </div>
    </div>
 </div>
@@ -62,17 +79,19 @@
             Eliminar Capítulo
          </div>
          <div class="card-body" style="padding:30px">
-<form method="POST">
-{{ csrf_field() }}
-<select name="capitulo" class="form-select" aria-label="Default select example">
-  <option selected disable >Seleccione Capítulo</option>
-  @foreach($capitulo as $cap)
-  <option  value="{{$cap->nombre}}">{{$cap->nombre}}</option>
-  @endforeach
-</select>
-<button type="submit" class="btn btn-outline-secondary">Eliminar</button>
-</form>
-</div>
+            <form method="POST">
+            {{ csrf_field() }}
+            <select name="capitulo" class="form-select" aria-label="Default select example" style="width: 477px">
+            <option selected disable >Seleccione Capítulo</option>
+            @foreach($capitulo as $cap)
+            <option  value="{{$cap->nombre}}">{{$cap->nombre}}</option>
+            @endforeach
+            </select>
+            <div class="form-group text-center">
+               <button type="submit" class="btn btn-outline-secondary" style="padding:8px 100px;margin-top:25px">Eliminar</button>
+            </div>
+            </form>
+         </div>
       </div>
    </div>
 </div>
@@ -84,22 +103,26 @@
             Eliminar Artículo
          </div>
          <div class="card-body" style="padding:30px">
-<form method="POST">
-{{ csrf_field() }}
-<select name="articulo"  class="form-select" aria-label="Default select example" >
-  <option selected disable >Seleccione Artículo</option>
-  @foreach($articulo as $art)
-  <option  value="{{$art->nombre}}">{{$art->nombre}}</option>
-  @endforeach
-</select>
-<button type="submit" class="btn btn-outline-secondary">Eliminar</button>
-</form>
-</div>
+            <form method="POST">
+            {{ csrf_field() }}
+            <select name="articulo"  class="form-select" aria-label="Default select example" style="width: 477px">
+            <option selected disable >Seleccione Artículo</option>
+            @foreach($articulo as $art)
+            <option  value="{{$art->nombre}}">{{$art->nombre}}</option>
+            @endforeach
+            </select>
+            <div class="form-group text-center">
+               <button type="submit" class="btn btn-outline-secondary" style="padding:8px 100px;margin-top:25px">Eliminar</button>
+            </div>
+            </form>
+         </div>
       </div>
    </div>
 </div>
 
-<div style="display:block">
-<a href="/"  class="btn btn-outline-secondary" >Volver al inicio</a>
+<div class="row">
+    <div class="col-sm-12" style="text-align:center; margin-top:20px">
+      <a href="/"  class="btn btn-outline-secondary" >Volver al inicio</a>
+    </div>
 </div>
 @stop
