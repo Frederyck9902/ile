@@ -6,7 +6,12 @@
 </div>
 <div class="row">
     <div class="col-sm-12" style="text-align:center; margin-top:20px">
-      <a href="{{ url('edit/3/' .$Articulo->id)}}"  class="btn btn-outline-secondary" >Editar</a>
+        @if( Auth::check() ) 
+            <a href="{{ url('edit/3/' .$Articulo->id)}}"  class="btn btn-outline-secondary" >Editar</a>
+        @elseif(!Auth::check())
+            <a class="nav-link" href="login">Inicia sesión para editar</a> 
+        @endif
+        
       <a href="/buscar"  class="btn btn-outline-secondary" >Volver al buscador</a>
     </div>
 </div>
