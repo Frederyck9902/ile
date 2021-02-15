@@ -22,9 +22,9 @@
                                 Editar
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="añadir">Añadir</a></li>
-                                <li><a class="dropdown-item" href="buscar">Buscar</a></li>
-                                <li><a class="dropdown-item" href="eliminar">Eliminar</a></li>
+                                <li><a class="dropdown-item" href="/añadir">Añadir</a></li>
+                                <li><a class="dropdown-item" href="/buscar">Buscar</a></li>
+                                <li><a class="dropdown-item" href="/eliminar">Eliminar</a></li>
                             </ul>
                         </div>
 
@@ -36,7 +36,7 @@
                         </form>
                 
                         @elseif(!Auth::check())
-                            <a class="nav-link" href="login">Iniciar Sesión</a> 
+                            <a class="nav-link" href="/login">Iniciar Sesión</a> 
                         @endif
                     </div>
                 </div>

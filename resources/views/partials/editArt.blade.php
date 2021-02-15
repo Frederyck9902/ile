@@ -6,7 +6,7 @@
     {{method_field('PUT')}}
     <div class="form-group">
         <label for="title">Articulo</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="{{$Contenido->nombre}}">
+        <textarea type="text" class="form-control" id="nombre" name="nombre" >{{$Contenido->nombre}}</textarea>
     </div>
     <div class="form-group">
         <label for="title">Contenido</label>

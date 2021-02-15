@@ -55,14 +55,14 @@ class LeyController extends Controller
         if($request->hasfile('imagen')){
             $file = $request->file('imagen');
             $nameFile = time()."-".$file->getClientOriginalName();
-            $ruta = "/public/img/".$nameFile;
+            $ruta = "img/".$nameFile;
             $file->move(public_path().'/img', $nameFile);
             $articulo->img = $ruta;
         }
         if($request->hasfile('video')){
             $fileV = $request->file('video');
             $nameFileV = time()."-".$fileV->getClientOriginalName();
-            $rutaV = "/public/video/".$nameFileV;
+            $rutaV = "video/".$nameFileV;
             $fileV->move(public_path().'/video', $nameFileV);
             $articulo->vid = $rutaV;
         }
@@ -154,14 +154,14 @@ class LeyController extends Controller
         if($request->hasfile('imagen')){
             $file = $request->file('imagen');
             $nameFile = time()."-".$file->getClientOriginalName();
-            $ruta = "/public/img/".$nameFile;
+            $ruta = "img/".$nameFile;
             $file->move(public_path().'/img', $nameFile);
             $titulo->img= $ruta;
         }
         if($request->hasfile('video')){
             $fileV = $request->file('video');
             $nameFileV = time()."-".$fileV->getClientOriginalName();
-            $rutaV = "/public/video/".$nameFileV;
+            $rutaV = "video/".$nameFileV;
             $fileV->move(public_path().'/video', $nameFileV);
             $titulo->vid= $rutaV;
         }
