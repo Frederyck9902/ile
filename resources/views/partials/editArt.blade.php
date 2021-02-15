@@ -24,6 +24,12 @@
         <input id="file-input" name="video" type="file" class="form-control" rows="3">
         </input>
     </div>
+
+    <div class="form-group">
+        <label for="comentario">Añadir comentario (opcional)</label>
+        <textarea type="text" class="form-control" id="comentario" name="comentario" ></textarea>
+    </div>
+    
     <button type="submit" class="btn btn-outline-secondary">Actualizar articulo</button>
     <a class="btn btn-outline-secondary" href="/buscar">Cancelar</a>
 </form>

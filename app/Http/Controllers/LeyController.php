@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Titulo;
 use App\Models\Capitulo;
 use App\Models\Articulo;
+use App\Models\Comentario;
 
 class LeyController extends Controller
 {
@@ -67,6 +68,12 @@ class LeyController extends Controller
             $articulo->vid = $rutaV;
         }
         $articulo->save();
+        if($request->comentario != ""){
+            $comentario = new Comentario;
+            $comentario->id_articulo = $articulo->id;
+            $comentario->contenido = $request->comentario;
+            $comentario->save();
+        }
         return redirect('/buscar/3/'.$articulo->id);
     }
 
@@ -111,7 +118,7 @@ class LeyController extends Controller
         return view('partials.buscarCap',array('Capitulo'=>Capitulo::findOrFail($id)));
     }
     public function getBuscarArt($id){
-        return view('partials.buscarArt',array('Articulo'=>Articulo::findOrFail($id)));
+        return view('partials.buscarArt',array('Articulo'=>Articulo::findOrFail($id),'comentario'=>Comentario::all()));
     }
 
     public function getReporte(){

@@ -29,6 +29,16 @@
             <video class="figure-img img-fluid rounded" src="{{asset($Articulo->vid)}}" width="150" height="150" controls></video>
         </div>
     @endif
+    <h1 style="text-align:center">Comentarios</h1>
+    @foreach ($comentario as $com)
+        
+        @if ($com->id_articulo == $Articulo->id)
+            <h4 style="text-align:justify">Comentario {{$com->id}}</h4>
+            <p style="text-align:justify">- {{$com->contenido}}</p>
+        @elseif($com->id == '1')
+            <p style="text-align:justify">No hay comentarios para este articulo aún</p>
+        @endif
+    @endforeach
     </div>
 </div>
 <div class="row">
