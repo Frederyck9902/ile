@@ -159,7 +159,7 @@
                
                <div class="form-group text-center">
                   <button id="añadir-articulo" type="submit" class="btn btn-outline-secondary" style="padding:8px 100px;margin-top:25px">
-                     Añadir título
+                     Añadir artículo
                   </button>
                </div>
             </form>
