@@ -8,7 +8,7 @@
       @if( Auth::check() ) 
         <a href="{{ url('edit/1/' .$Titulo->id)}}"  class="btn btn-outline-secondary" >Editar</a>
       @elseif(!Auth::check())
-        <a class="nav-link" href="login">Inicia sesión para editar</a> 
+        <a class="nav-link" href="/login">Inicia sesión para editar</a> 
       @endif
       
       
